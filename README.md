@@ -1,4 +1,4 @@
-# Compostable Bamboo
+# Compostable Bamboo (Forge)
 
 Makes **bamboo** compostable, with the same **30%** fill chance as other low-tier compostables (`compostable/low`).
 
@@ -6,8 +6,8 @@ Server-side / singleplayer. Clients do not need the mod.
 
 ## Mechanics
 
-- Adds the vanilla `COMPOSTABLE` data component to `minecraft:bamboo`.
-- Uses the built-in `minecraft:compostable/low` chance provider (~30% level increase per item).
+- Vanilla 26.3 composters only look at `DataComponents.COMPOSTABLE` on the `ItemStack` (`useItemOn`, `insertItem`, hopper `InputContainer`).
+- Forge has no reliable way to attach that default component to vanilla bamboo, so this build synthesizes it in an `ItemStack` mixin for bamboo only (`ContextIntProviders.COMPOSTABLE_LOW` ≈ 30%).
 
 ## Credits
 
